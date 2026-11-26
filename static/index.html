@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b33">
+  <title>SummitReady — pack for the mountain</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="SummitReady home"><svg viewBox="0 0 40 32" width="36" height="30" aria-hidden="true"><path d="M2 29 17 3l9 16 4-6 8 16Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="m12 12 5 3 4-3" fill="none" stroke="currentColor" stroke-width="2"/></svg> SummitReady</a><span>NEW HAMPSHIRE / DAY HIKES</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">A LITTLE PREPARATION GOES A LONG WAY</p><h1>Pick a peak.<br>Know what to pack.</h1><p class="lede">A practical starting checklist from local weather and elevation, with room for the trail you choose.</p></section>
+    <div class="workspace">
+      <section class="planner card" aria-labelledby="plan-title">
+        <h2 id="plan-title">Your next hike</h2><p class="subtle" id="catalog-info">Loading New Hampshire summits…</p>
+        <form id="planner">
+          <label for="search">Find a mountain</label><input id="search" type="search" placeholder="Try Washington, Monadnock, or a county" autocomplete="off" aria-controls="mountain">
+          <label for="mountain">Mountain <span id="match-count" class="subtle"></span></label><select id="mountain" name="mountain" required disabled><option value="">Loading…</option></select>
+          <p id="location" class="field-note"></p>
+          <label for="day">Forecast day <span class="subtle">Eastern time</span></label><input id="day" name="day" type="date" required>
+          <label for="mode">Weather source</label><select id="mode" name="mode"><option value="live">Live NWS forecast + USGS elevation</option><option value="demo">Offline demo — synthetic weather & elevation</option></select>
+          <label for="surface">Known trail surface</label><select id="surface" name="surface"><option value="unknown">Not checked yet</option><option value="dry">Reported dry</option><option value="snow">Reported snow</option><option value="ice">Reported ice</option></select>
+          <fieldset><legend>What does your route involve?</legend><label class="check"><input type="checkbox" id="exposed" name="exposed"> Extended exposed terrain</label><label class="check"><input type="checkbox" id="technical" name="technical"> Technical scrambling or climbing</label></fieldset>
+          <button type="submit" id="generate" disabled>Build my checklist</button>
+          <p class="field-note">A peak selection is not a verified trail. Check your route description and current conditions.</p>
+        </form>
+      </section>
+      <section class="results" aria-label="Gear checklist">
+        <div id="error" class="error" role="alert" hidden></div>
+        <p id="status" class="subtle" role="status" aria-live="polite"></p>
+        <div id="empty" class="empty card"><div class="mountain-art" aria-hidden="true"><svg viewBox="0 0 400 190"><path d="m0 190 80-100 45 42L230 10l130 180" fill="#d9e6d7"/><path d="m114 190 116-180 30 42 22-11 118 149" fill="#a8c5ae"/><path d="m230 10-39 59 36-14 22 15 11-18" fill="#f4f8ef"/><path d="m0 190 82-52 57 35 87-68 174 85" fill="#64917e"/><path d="m0 190 102-18 86 18" fill="#215547"/></svg></div><p class="eyebrow">PACK WITH A REASON</p><h2>Start with a mountain.<br>Make it your checklist.</h2><p>We’ll show the weather estimate, everyday essentials, and trail-dependent options—along with why each belongs.</p><span class="tag">No account. No API key.</span></div>
+        <div id="result" hidden>
+          <div id="demo-banner" class="demo-banner" hidden>OFFLINE DEMO · Synthetic 4,000-ft elevation and weather. These values do not describe your selected mountain or date.</div>
+          <div id="stale-banner" class="demo-banner" hidden>Your hike details changed. Build a new checklist to update these results.</div>
+          <section class="forecast card"><p class="eyebrow" id="result-source"></p><h2 id="result-name"></h2><p id="result-day" class="subtle"></p><div class="metrics"><div><span>Estimated low</span><strong id="temp"></strong></div><div><span>Grid wind</span><strong id="wind"></strong></div><div><span>Precip. chance</span><strong id="precip"></strong></div></div><p id="elevation" class="field-note"></p><details><summary>How this estimate works</summary><p id="estimate"></p><p id="conditions"></p><p id="updated"></p><a id="forecast-link" target="_blank" rel="noreferrer">View NWS hourly data</a></details></section>
+          <div class="list-heading"><h2>Your packing list</h2><span id="progress" class="tag" aria-live="polite">0 packed</span><button type="button" class="text-button" id="print">Print</button></div>
+          <section class="card gear-section"><h3>Everyday essentials</h3><p class="subtle">The foundation for every selection.</p><div id="essentials"></div></section>
+          <section class="card gear-section"><h3>Added for the conditions</h3><p class="subtle">Simple rules, with a reason for every addition.</p><div id="weather-additions"></div></section>
+          <section class="card gear-section"><h3>Trail-dependent optionals</h3><p class="subtle">Review these against your actual route. An optional item may be essential on a particular trail.</p><div id="trail-optionals"></div></section>
+          <section class="notes"><h3>Before you head out</h3><ul id="notes"></ul><p>Review <a href="https://www.hikesafe.com/knowledge-gear" target="_blank" rel="noreferrer">HikeSafe preparation guidance</a> and the <a href="https://mountwashington.org/weather/higher-summits-forecast/" target="_blank" rel="noreferrer">Higher Summits Forecast</a>. This is a rough planning aid; it does not determine whether a hike is safe.</p></section>
+        </div>
+      </section>
+    </div>
+    <footer>Built for a day in the mountains. <a href="https://www.usgs.gov/us-board-on-geographic-names/download-gnis-data" target="_blank" rel="noreferrer">USGS summit names</a> · <a href="https://www.weather.gov/documentation/services-web-api" target="_blank" rel="noreferrer">NWS weather</a><p id="coverage"></p></footer>
+  </main>
+</body>
+</html>
