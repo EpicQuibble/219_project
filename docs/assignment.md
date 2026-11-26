@@ -10,7 +10,7 @@ Do not submit placeholders or automated tests as completed human evidence.
 - Agent: OpenAI Codex. Model family: GPT-6; record the exact UI model label before submitting Blackboard.
 - Actual scope-shaping prompt: “every mountain in new hampsure should be on our list, we should just make a guesstimate based on the elevation and general weather conditions, the gear list should have \"optionals\" that are things like ropes and other items that are specific to the trails.”
 - Structure: Python server, frontend, bundled statewide catalog/importer, settings example, ignore rules, Containerfile, tests.
-- Branch: `codex/summitready-mvp`. Record the actual PR URL and merge through GitHub.
+- Branch: `codex/summitready-mvp`. [Implementation PR #1](https://github.com/EpicQuibble/219_project/pull/1) is open for review; merge through GitHub.
 - Executed checks: docs/verification.md.
 
 ## Checkpoint 3 — December 4, 2026 (20 points)

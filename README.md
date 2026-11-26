@@ -91,6 +91,8 @@ python scripts/import_mountains.py
 
 The importer preserves GNIS IDs and coordinates and records source URL, retrieval time, and archive SHA-256 in `data/mountains.json`. Elevations are fetched only for the selected mountain.
 
+See [executed verification and its limits](docs/verification.md) and the [working forecast screenshot](docs/screenshots/live-checklist.jpg). The optional container has not yet been run; Podman is absent and the local Docker engine is stopped.
+
 Source: `src/summitready/`. Frontend: `static/`. Catalog: `data/`. See [SPEC.md](SPEC.md), [AGENTS.md](AGENTS.md), and [assignment evidence](docs/assignment.md).
 
 Work on branches and merge through PRs. Record real outside feedback as an issue, then fix it in a PR with `Closes #<issue-number>` or explain why no change is appropriate. Automated testing is not an outside user.
